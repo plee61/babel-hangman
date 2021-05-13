@@ -34,6 +34,13 @@ const render = ()=> {
     return `${output}`    
 }
 
+document.querySelector("#btnSidepanel").addEventListener('click',function(){
+    document.querySelector("#myPanel").style.width = "250px";
+})
+document.querySelector("#sidepanel").addEventListener('click',function(){
+    document.querySelector("#myPanel").style.width = "0px";
+})
+  
 const startGame = async() => {
     const wordNumber = 1
     const puzzle = await getPuzzle(wordNumber)

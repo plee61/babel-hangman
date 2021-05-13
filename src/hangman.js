@@ -12,6 +12,7 @@ class Hangman {
         if (this.remaining <= 0) return
         if (!this.guessed.includes(guessWord)){
             this.guessed.push(guessWord)
+            this.guessed = [...this.guessed, guessWord]
         }
         this.remaining--
         
