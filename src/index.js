@@ -4,7 +4,7 @@ const outputElement = document.querySelector('#output')
 const guessesEl = document.querySelector('#guesses')
 
 let hangman
-window.addEventListener('keypress',(e)=>{
+document.querySelector('#keyPress').addEventListener('keypress',(e)=>{
     hangman.puzzle = String.fromCharCode(e.charCode)
     
     outputElement.innerHTML = render()
@@ -47,6 +47,8 @@ const startGame = async() => {
     hangman = new Hangman(puzzle)
     outputElement.innerHTML = render()
     document.querySelector('#status').textContent = hangman.statusMessage
+    document.querySelector('#keyPress').value = ""
+    document.querySelector('#keyPress').focus()
 } 
 
 startGame()
